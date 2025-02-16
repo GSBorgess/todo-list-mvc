@@ -1,0 +1,59 @@
+﻿@model List<TodoList.Models.Tarefa>
+@{
+    ViewData["Title"] = "Lista De Tarefas";
+}
+
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card" id="list1" style="border-radius: .75rem; background-color: #eff1f2;">
+                    <div class="card-body py-4 px-4 px-md-5">
+
+                        <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
+                            <i class="bi bi-calendar-check-fill"></i>
+                            <u>Lista De Tarefas</u>
+                        </p>
+
+                        
+
+                        <hr class="my-4">
+
+
+                        <ul class="list-group rounded-0 bg-transparent">
+
+                            @foreach (var tarefa in Model)
+                            {
+                                <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                                    <div class="form-check">
+                                        <input class="form-check-input me-0" type="checkbox" value="" id="flexCheckChecked1"
+                                               aria-label="..." checked />
+                                    </div>
+                                    <div class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                                        <p class="lead fw-normal mb-0">@tarefa.Description</p>
+                                    </div>
+                                    <div class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                                        <div class="d-flex flex-row justify-content-end mb-1 gap-2">
+                                            <a class="text-info" data-mdb-tooltip-init title="Editar tarefa" asp-controller="Home" asp-action="edit" asp-route-id="@tarefa.Id">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+                                            <a asp-controller="Home" asp-action="Delete" class="text-danger" data-mdb-tooltip-init title="Deletar tarefa">
+                                                <i class="bi bi-trash-fill"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+
+                        </ul>
+
+                        <hr class="my-4">
+
+                        <a asp-controller="Home" asp-action="Create" class="btn btn-primary">Adicionar Nova Tarefa</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

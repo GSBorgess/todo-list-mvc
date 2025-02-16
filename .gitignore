@@ -1,0 +1,28 @@
+# Ignorar a pasta do Visual Studio
+.vs/
+
+# Ignorar arquivos do Visual Studio Code
+.vscode/
+
+# Ignorar binários e dependências do .NET
+bin/
+obj/
+packages/
+TestResults/
+
+# Ignorar arquivos de configuração do usuário
+*.user
+*.suo
+*.ncb
+*.sdf
+*.cache
+*.ldb
+
+# Ignorar logs e arquivos temporários
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignorar arquivos de publicação
+publish/

@@ -1,0 +1,31 @@
+﻿@model TodoList.Models.Tarefa
+@{
+    ViewData["Title"] = "Nova Tarefa";
+}
+
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card" id="list1" style="border-radius: .75rem; background-color: #eff1f2;">
+                    <div class="card-body py-4 px-4 px-md-5">
+
+                        <div class="pb-2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form asp-action="Create" method="post" class="d-flex flex-row align-items-center gap-2">
+                                        <input type="text" class="form-control form-control-lg" id="Description" name="Description" placeholder="Adicionar nova tarefa..." asp-for="Description">
+                                        <div>
+                                            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary">Adicionar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
